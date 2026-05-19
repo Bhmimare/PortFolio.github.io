@@ -33,3 +33,63 @@ section {
   border-radius: 8px;
   margin-top: 1rem;
 }
+
+/* Estas reglas se aplicarán en pantallas de menos de 768px (móviles y tablets) */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Evitamos el desbordamiento horizontal en el body */
+    body {
+        overflow-x: hidden;
+        font-size: 16px; /* Ajustamos el tamaño de fuente general */
+    }
+
+    /* 2. El encabezado (header) y menú */
+    header {
+        position: relative; /* Evitamos fixed si da problemas */
+        width: 100%;
+        height: auto; /* Dejamos que crezca según contenido */
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* El menú de navegación: de horizontal a vertical */
+    nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Apilamos enlaces en vertical */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaciado entre enlaces vertical */
+    }
+
+    
+    .container {
+        width: 90% !important; /* Usamos el 90% del ancho del móvil */
+        max-width: none;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    
+    .hero img {
+        width: 100px; /* Reducimos el tamaño de la foto */
+        height: auto;
+        display: block;
+        margin: 0 auto 20px auto; /* Centrada */
+    }
+
+
+    .grid, .projects-grid, .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Una columna en la mayoría de móviles */
+        gap: 15px;
+    }
+
+    
+    .project, .skill-card {
+        width: 100% !important; /* Que ocupen todo el ancho disponible */
+        margin: 10px 0;
+    }
+}
