@@ -38,16 +38,99 @@ section {
   word-break: break-word;  /* Evita que el texto plano se salga del div */
 }
 
-/* Estas reglas se aplicarán en pantallas de menos de 768px (móviles y tablets) */
+/* --- SECCIÓN DE CONTACTO --- */
+.contacto-section {
+    text-align: center;
+    max-width: 600px; /* Limitamos el ancho para que no se estire demasiado en PC */
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contacto-section h2 {
+    margin-bottom: 30px;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column; /* Alinea los bloques hacia abajo */
+    gap: 15px;              /* Espaciado uniforme entre elementos */
+}
+
+/* Fila para Nombre y Correo */
+.input-grupo {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-grupo input, 
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambia el color del borde al hacer clic para escribir */
+.input-grupo input:focus, 
+.formulario-contacto textarea:focus {
+    border-color: #00bcd4; /* Azul tecnológico a juego con el hover del footer */
+    outline: none;
+}
+
+/* El área del mensaje */
+.formulario-contacto textarea {
+    resize: vertical; /* Permite al usuario estirarlo solo hacia abajo */
+}
+
+/* Botón Enviar */
+.btn-enviar {
+    background-color: #000000; /* Fondo negro a juego con el footer */
+    color: #ffffff;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: center; /* Centra el botón exactamente en medio */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: auto;
+    min-width: 150px;
+}
+
+.btn-enviar:hover {
+    background-color: #323232; /* Se vuelve gris oscuro al pasar el ratón */
+}
+
+.btn-enviar:active {
+    transform: scale(0.98); /* Pequeño efecto de hundido al hacer clic */
+}
+
+/* --- ADAPTACIÓN PARA MÓVILES --- */
 @media screen and (max-width: 768px) {
+    .input-grupo {
+        flex-direction: column; /* En móviles, el correo baja debajo del nombre */
+        gap: 15px;
+    }
     
-    /* 1. Evitamos el desbordamiento horizontal en el body */
+    .btn-enviar {
+        width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
         font-size: 16px; 
     }
 
-    /* Reducimos el padding de las secciones en móviles para ganar espacio lateral */
     section {
         padding: 30px 15px; 
     }
@@ -89,7 +172,6 @@ section {
         margin: 0 auto 20px auto; 
     }
 
-    /* --- REGLA CRUCIAL PARA LA MEDIDA EN MÓVILES --- */
     .grid, .projects-grid, .skills-grid {
         display: grid;
         /* Cambiamos el minmax a 250px para pantallas de móviles muy pequeños */
@@ -103,6 +185,93 @@ section {
         width: 100% !important; 
         margin: 10px 0;
         box-sizing: border-box; /* Obligatorio para que respete el ancho */
+    }
+}
+
+/* --- SECCIÓN DE CONTACTO --- */
+.contacto-section {
+    text-align: center;
+    max-width: 600px; /* Limitamos el ancho para que no se estire demasiado en PC */
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contacto-section h2 {
+    margin-bottom: 30px;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column; /* Alinea los bloques hacia abajo */
+    gap: 15px;              /* Espaciado uniforme entre elementos */
+}
+
+/* Fila para Nombre y Correo */
+.input-grupo {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-grupo input, 
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambia el color del borde al hacer clic para escribir */
+.input-grupo input:focus, 
+.formulario-contacto textarea:focus {
+    border-color: #00bcd4; /* Azul tecnológico a juego con el hover del footer */
+    outline: none;
+}
+
+/* El área del mensaje */
+.formulario-contacto textarea {
+    resize: vertical; /* Permite al usuario estirarlo solo hacia abajo */
+}
+
+/* Botón Enviar */
+.btn-enviar {
+    background-color: #000000; /* Fondo negro a juego con el footer */
+    color: #ffffff;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: center; /* Centra el botón exactamente en medio */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: auto;
+    min-width: 150px;
+}
+
+.btn-enviar:hover {
+    background-color: #323232; /* Se vuelve gris oscuro al pasar el ratón */
+}
+
+.btn-enviar:active {
+    transform: scale(0.98); /* Pequeño efecto de hundido al hacer clic */
+}
+
+/* --- ADAPTACIÓN PARA MÓVILES --- */
+@media screen and (max-width: 768px) {
+    .input-grupo {
+        flex-direction: column; /* En móviles, el correo baja debajo del nombre */
+        gap: 15px;
+    }
+    
+    .btn-enviar {
+        width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
     }
 }
 
