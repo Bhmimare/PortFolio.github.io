@@ -24,14 +24,18 @@ nav a {
 }
 
 section {
-  padding: 50px ;
+  padding: 50px;
 }
 
+/* --- MEJORA EN LAS CARDS GENERALES --- */
 .card {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
   margin-top: 1rem;
+  box-sizing: border-box;  /* Asegura que el padding no sume ancho extra */
+  overflow-wrap: anywhere; /* Rompe enlaces largos como el de tu JS */
+  word-break: break-word;  /* Evita que el texto plano se salga del div */
 }
 
 /* Estas reglas se aplicarán en pantallas de menos de 768px (móviles y tablets) */
@@ -40,56 +44,64 @@ section {
     /* 1. Evitamos el desbordamiento horizontal en el body */
     body {
         overflow-x: hidden;
-        font-size: 16px; /* Ajustamos el tamaño de fuente general */
+        font-size: 16px; 
+    }
+
+    /* Reducimos el padding de las secciones en móviles para ganar espacio lateral */
+    section {
+        padding: 30px 15px; 
     }
 
     /* 2. El encabezado (header) y menú */
     header {
-        position: relative; /* Evitamos fixed si da problemas */
+        position: relative; 
         width: 100%;
-        height: auto; /* Dejamos que crezca según contenido */
+        height: auto; 
         text-align: center;
         padding: 10px;
     }
 
-    /* El menú de navegación: de horizontal a vertical */
     nav ul {
         width: 100%;
         display: flex;
-        flex-direction: column; /* Apilamos enlaces en vertical */
+        flex-direction: column; 
         align-items: center;
+        padding: 0; /* Limpiamos paddings por defecto de las listas */
+        margin: 0;
     }
 
     nav ul li {
-        margin: 5px 0; /* Espaciado entre enlaces vertical */
+        margin: 5px 0; 
     }
 
-    
     .container {
-        width: 90% !important; /* Usamos el 90% del ancho del móvil */
+        width: 100% !important; /* Aprovechamos mejor el espacio */
         max-width: none;
         margin: 0 auto;
         padding: 10px;
+        box-sizing: border-box;
     }
-
     
     .hero img {
-        width: 100px; /* Reducimos el tamaño de la foto */
+        width: 100px; 
         height: auto;
         display: block;
-        margin: 0 auto 20px auto; /* Centrada */
+        margin: 0 auto 20px auto; 
     }
 
-
+    /* --- REGLA CRUCIAL PARA LA MEDIDA EN MÓVILES --- */
     .grid, .projects-grid, .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Una columna en la mayoría de móviles */
+        /* Cambiamos el minmax a 250px para pantallas de móviles muy pequeños */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
         gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
-
     
-    .project, .skill-card {
-        width: 100% !important; /* Que ocupen todo el ancho disponible */
+    .project, .skill-card, .card {
+        width: 100% !important; 
         margin: 10px 0;
+        box-sizing: border-box; /* Obligatorio para que respete el ancho */
     }
 }
