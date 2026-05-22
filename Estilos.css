@@ -106,43 +106,47 @@ section {
     }
 }
 
-/* --- FOOTER --- */
-footer {
-    background: #323232;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 4rem; /* Separa el footer del contenido anterior */
-    box-sizing: border-box;
+/* --- ESTILOS DEL FOOTER CENTRADO Y NEGRO --- */
+.site-footer {
+    background: #000000; /* Fondo negro puro */
+    color: #ffffff;      /* Texto blanco para máximo contraste */
+    text-align: center;  /* Centra el texto y elementos en línea */
+    padding: 30px 20px;  /* Espaciado interno generoso */
+    margin-top: 50px;    /* Separación elegante con los proyectos de arriba */
+    width: 100%;
+    box-sizing: border-box; /* Evita desbordamientos laterales */
 }
 
-footer p {
-    margin: 0 0 1rem 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
+.site-footer p {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 .footer-links {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: center; /* Centra los enlaces horizontalmente en PCs */
+    align-items: center;
+    gap: 25px;               /* Separación horizontal entre los links */
 }
 
 .footer-links a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transición suave para el efecto hover */
 }
 
+/* Efecto visual al pasar el ratón por encima del enlace */
 .footer-links a:hover {
-    color: #00bcd4; /* Un tono sutil al pasar el cursor */
+    color: #00bcd4; /* Un azul cyan tecnológico (puedes cambiarlo por tu color favorito) */
 }
 
-/* Ajuste específico para móviles en tu Media Query */
+/* --- ADAPTACIÓN RESPONSIVE (MÓVILES) --- */
 @media screen and (max-width: 768px) {
     .footer-links {
-        flex-direction: column; /* Apila los enlaces en vertical en pantallas pequeñas */
-        gap: 0.8rem;
+        flex-direction: column; /* En móviles los enlaces se apilan uno abajo del otro */
+        gap: 12px;              /* Espaciado vertical más compacto */
     }
 }
