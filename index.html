@@ -3,106 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Badr Hmimar</title>
-  <link rel="stylesheet" href="./Estilos.css">
+  <title>Portfolio Badr Hmimar Essat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Badr Hmimar</h1>
-      <ul>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Hola! Soy Badr Hmimar Essat, un apasionado del desarrollo web con un perfil híbrido que combina la analítica técnica con la gestión de proyectos. <br>
-      Durante más de una década, me dediqué al sector comercial y empresarial, liderando equipos de más de 30 personas y optimizando procesos de negocio mediante herramientas digitales. 
-      Esa experiencia me enseñó algo fundamental: la tecnología solo es útil si resuelve problemas reales y mejora la vida de los usuarios.
-      Impulsado por esa visión, decidí dar un giro profesional y sumergirme por completo en el desarrollo de software, 
-      completando un Curso Superior de 2años con una calificación de Sobresaliente. Hoy en día, domino el desarrollo Full Stack, 
-      desde la maquetación limpia y accesible en el Frontend hasta la lógica y arquitectura de servidores en el Backend. <br>
-      ¿Qué aporto a un equipo de desarrollo? <br>
-          * Capacidad para entender tanto la experiencia de usuario como la persistencia de los datos. <br>
-          * Metodologías Ágiles: Experiencia real organizando flujos de trabajo eficientes con Scrum. <br>
-          * Visión de Negocio: Gracias a mi pasado como gerente y comercial, me comunico de forma clara, 
-            me adapto rápido a los cambios y entiendo las metas comerciales de la empresa. <br>
-      Estoy listo para integrarme en un equipo dinámico y aportar soluciones desde el primer día.</p>
-  </section>
-
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="card">
-      <h3>Maquetación</h3>
-      <a href="https://bhmimare.github.io/trabajo_html/" target="_blank">Ver Repositorio en GitHub</a>
-      <p>Aprendí a traducir requisitos visuales en código limpio y estructurado utilizando HTML5 semántico, 
-        lo que garantiza la accesibilidad web y una base sólida para el SEO técnico. Dominé el uso de CSS3 avanzado, 
-        la creación de diseños completamente adaptables mediante Flexbox y CSS Grid, 
-        y la mantenibilidad del código a través de Custom Properties (variables CSS).</p>
-    </div>
-
-    <div class="card">
-      <h3>Frontend</h3>
-      <a href="https://bhmimare.github.io/TrabajoJavaScript.github.io" target="_blank">Ver Repositorio en GitHub</a>
-      <p>
-        Desarrollé soluciones lógicas complejas utilizando JavaScript Nativo (Vanilla JS) sin depender de librerías externas. 
-        Consolidé el control absoluto de la interfaz de usuario mediante la manipulación dinámica del DOM, 
-        la gestión optimizada de eventos en tiempo real, el control de flujos de datos y la validación estricta de formularios en el lado del cliente.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Backend FullStack <br> bhmimare.great-site.net/</h3>
-      <a href="https://bhmimare.great-site.net/" target="_blank">Proyecto Final</a> 
-      <p>
-       Adquirí la capacidad de gestionar el ciclo completo de los datos. Aprendí a estructurar la lógica de negocio en el servidor con PHP y a diseñar, 
-       modelar y optimizar bases de datos relacionales con MySQL (SQL). Dominé el control seguro de sesiones de usuario, 
-       el procesamiento dinámico de peticiones y el despliegue final de la aplicación en un entorno de producción real utilizando servidores Apache.
-      </p>
-    </div>
-  </section>
-
-  <section id="proyectos">
-    <h2>Aptitudes</h2>
-    <div class="card">
-      <h3>Aptitudes Técnicas Conseguidas</h3>
-      <p>
-       Desarrollo Full Stack: Integración fluida entre cliente y servidor.
-       Backend: Programación en PHP y gestión de servidores Apache.
-       Bases de Datos: Modelado relacional y lenguaje SQL (MySQL).
-       Frontend Avanzado: JavaScript Estricto (Vanilla JS) y Control del DOM.
--      Diseño Web: HTML5 Semántico, CSS3 Moderno, Flexbox, CSS Grid y Responsive Design.
-      </p>
-    </div>
-  </section>
- 
-
-  <section id="contacto" class="contacto-section">
-    <h2>Contacto</h2>
-    <form class="formulario-contacto">
-        <div class="input-grupo">
-            <input type="text" placeholder="Tu Nombre" required>
-            <input type="email" placeholder="Tu Correo Electrónico" required>
-        </div>
-        <textarea placeholder="Escribe tu mensaje aquí..." rows="6" required></textarea>
-        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-    </form>
+<section class="hero">
+  <h1>Hola, soy <br> Badr Hmimar Essat</h1>
+  <p>Desarrollador Frontend</p>
+  <div class="metrics">
+    <div><strong>3+</strong><br>Proyectos Personales</div>
+    <div><strong>1+</strong><br>Años de experiencia</div>
+    <div><strong>100%</strong><br>Responsive</div>
+  </div>
+  <div class="cta">
+    <button class="btn primary" onclick="scrollToId('projects')">Ver proyectos</button>
+    <button class="btn secondary" onclick="scrollToId('contact')">Contactar</button>
+  </div>
 </section>
 
- <footer class="site-footer">
-    <p>&copy; 2026 Badr Hmimar Essat | Desarrollador Web | Tel: +34622560581</p>
-    <div class="footer-links">
-        <a href="mailto:bhmimare@gmail.com">bhmimare@gmail.com</a>
-        <a href="https://github.com/bhmimare" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/badrhmimaressat" target="_blank">LinkedIn</a>
-    </div>
+<section>
+  <h2>Proyecto destacado</h2>
+  <div class="project">
+    <img src="./img/logotipo.png" alt="project">
+    <h3>App profesional</h3>
+    <p>Aplicación web enfocada y diseñada como una Plataforma Web de Servicios de Fotografía Profesional con Funcionalidades Dinámicas.</p>
+    <a href="https://bhmimare.great-site.net/?i=1" target="_blank">Ver proyecto →</a>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Más proyectos</h2>
+  <div class="grid" id="projectsGrid"></div>
+</section>
+
+<section>
+  <h2>Stack</h2>
+  <div class="grid">
+    <div class="card">HTML, CSS, JS, PHP y MySQL</div>
+    <div class="card">Git, GitHub, VS Code</div>
+    <div class="card">Scrum, SEO on-page, UI/UX Basico</div>
+    <div class="card">WordPress (Theme, Plugin, Gutenberg, SEO ...)</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contacto</h2>
+  <p>Teléfono: +34 622 560 581 </p>
+  <p>Email: bhmimare@mail.com</p>
+  <p>GitHub: github.com/bhmimare</p>
+  <p>LinkedIn: linkedin.com/in/bhmimare</p>
+</section>
+
+<footer>
+  Portfolio Badr Himimar Essat - 2026
 </footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-
-
 
