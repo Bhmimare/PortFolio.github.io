@@ -1,321 +1,210 @@
-body {
-  font-family: Arial, sans-serif;
+
+    /* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+  --primary-color: #2563eb; /* Azul tecnológico */
+  --secondary-color: #4b5563; /* Gris moderno */
+  --bg-color: #f9fafb;
+  --text-color: #1f2937;
+  --card-bg: #ffffff;
+  --font-family: 'Inter', sans-serif;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  background: #323232;
-  color: #fff;
-  padding: 1rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 0 20px; /* Margen de seguridad en móviles */
 }
 
 section {
-  padding: 50px;
+  max-width: 1000px;
+  margin: 60px auto; /* Centra las secciones en pantallas grandes */
+  padding: 20px 0;
 }
 
-/* --- MEJORA EN LAS CARDS GENERALES --- */
-.card {
-  border: 1px solid #ddd;
-  padding: 1rem;
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* ==========================================
+   2. SECCIÓN HERO (Móvil Primero)
+   ========================================== */
+.hero {
+  text-align: center;
+  padding: 80px 0 40px 0;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
+/* Métricas adaptables */
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.metrics div {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.metrics strong {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+
+/* Botones de llamada a la acción */
+.cta {
+  display: flex;
+  flex-direction: column; /* Botones uno abajo del otro en móvil */
+  gap: 15px;
+  align-items: center;
+}
+
+.btn {
+  width: 100%; /* Ancho completo en móvil */
+  max-width: 250px;
+  padding: 14px 28px;
+  border: none;
   border-radius: 8px;
-  margin-top: 1rem;
-  box-sizing: border-box;  /* Asegura que el padding no sume ancho extra */
-  overflow-wrap: anywhere; /* Rompe enlaces largos como el de tu JS */
-  word-break: break-word;  /* Evita que el texto plano se salga del div */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* --- SECCIÓN DE CONTACTO --- */
-.contacto-section {
-    text-align: center;
-    max-width: 600px; /* Limitamos el ancho para que no se estire demasiado en PC */
-    margin: 0 auto 50px auto;
-    padding: 20px;
-    box-sizing: border-box;
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-.contacto-section h2 {
-    margin-bottom: 30px;
+.btn.secondary {
+  background-color: #e5e7eb;
+  color: var(--text-color);
 }
 
-.formulario-contacto {
-    display: flex;
-    flex-direction: column; /* Alinea los bloques hacia abajo */
-    gap: 15px;              /* Espaciado uniforme entre elementos */
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-/* Fila para Nombre y Correo */
-.input-grupo {
-    display: flex;
-    gap: 15px;
-    width: 100%;
+/* ==========================================
+   3. PROYECTO DESTACADO (Flexbox Adaptable)
+   ========================================== */
+.project {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column; /* Apilado en móvil */
+  gap: 20px;
+  align-items: center;
 }
 
-.input-grupo input, 
-.formulario-contacto textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+.project img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-/* Cambia el color del borde al hacer clic para escribir */
-.input-grupo input:focus, 
-.formulario-contacto textarea:focus {
-    border-color: #00bcd4; /* Azul tecnológico a juego con el hover del footer */
-    outline: none;
+.project h3 {
+  margin-bottom: 10px;
 }
 
-/* El área del mensaje */
-.formulario-contacto textarea {
-    resize: vertical; /* Permite al usuario estirarlo solo hacia abajo */
+.project a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-/* Botón Enviar */
-.btn-enviar {
-    background-color: #000000; /* Fondo negro a juego con el footer */
-    color: #ffffff;
-    border: none;
-    padding: 14px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    align-self: center; /* Centra el botón exactamente en medio */
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    width: auto;
-    min-width: 150px;
+/* ==========================================
+   4. DISEÑO DE REJILLAS (Grids)
+   ========================================== */
+/* Se adapta automáticamente: 1 columna en móvil, más columnas en pantallas grandes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.btn-enviar:hover {
-    background-color: #323232; /* Se vuelve gris oscuro al pasar el ratón */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  border-left: 4px solid var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.btn-enviar:active {
-    transform: scale(0.98); /* Pequeño efecto de hundido al hacer clic */
+/* ==========================================
+   5. CONTACTO Y FOOTER
+   ========================================== */
+#contact p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
 }
 
-/* --- ADAPTACIÓN PARA MÓVILES --- */
-@media screen and (max-width: 768px) {
-    .input-grupo {
-        flex-direction: column; /* En móviles, el correo baja debajo del nombre */
-        gap: 15px;
-    }
-    
-    .btn-enviar {
-        width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
-    }
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-        font-size: 16px; 
-    }
+/* ==========================================
+   6. MEDIA QUERIES (Adaptación a Escritorio)
+   ========================================== */
+@media (min-width: 768px) {
+  body {
+    padding: 0 40px;
+  }
 
-    section {
-        padding: 30px 15px; 
-    }
+  .hero h1 {
+    font-size: 3.5rem; /* Título más grande en PC */
+  }
 
-    /* 2. El encabezado (header) y menú */
-    header {
-        position: relative; 
-        width: 100%;
-        height: auto; 
-        text-align: center;
-        padding: 10px;
-    }
+  .cta {
+    flex-direction: row; /* Botones en horizontal en PC */
+    justify-content: center;
+  }
 
-    nav ul {
-        width: 100%;
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        padding: 0; /* Limpiamos paddings por defecto de las listas */
-        margin: 0;
-    }
-
-    nav ul li {
-        margin: 5px 0; 
-    }
-
-    .container {
-        width: 100% !important; /* Aprovechamos mejor el espacio */
-        max-width: none;
-        margin: 0 auto;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    
-    .hero img {
-        width: 100px; 
-        height: auto;
-        display: block;
-        margin: 0 auto 20px auto; 
-    }
-
-    .grid, .projects-grid, .skills-grid {
-        display: grid;
-        /* Cambiamos el minmax a 250px para pantallas de móviles muy pequeños */
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-        gap: 15px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .project, .skill-card, .card {
-        width: 100% !important; 
-        margin: 10px 0;
-        box-sizing: border-box; /* Obligatorio para que respete el ancho */
-    }
-}
-
-/* --- SECCIÓN DE CONTACTO --- */
-.contacto-section {
-    text-align: center;
-    max-width: 600px; /* Limitamos el ancho para que no se estire demasiado en PC */
-    margin: 0 auto 50px auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.contacto-section h2 {
-    margin-bottom: 30px;
-}
-
-.formulario-contacto {
-    display: flex;
-    flex-direction: column; /* Alinea los bloques hacia abajo */
-    gap: 15px;              /* Espaciado uniforme entre elementos */
-}
-
-/* Fila para Nombre y Correo */
-.input-grupo {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-}
-
-.input-grupo input, 
-.formulario-contacto textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
-}
-
-/* Cambia el color del borde al hacer clic para escribir */
-.input-grupo input:focus, 
-.formulario-contacto textarea:focus {
-    border-color: #00bcd4; /* Azul tecnológico a juego con el hover del footer */
-    outline: none;
-}
-
-/* El área del mensaje */
-.formulario-contacto textarea {
-    resize: vertical; /* Permite al usuario estirarlo solo hacia abajo */
-}
-
-/* Botón Enviar */
-.btn-enviar {
-    background-color: #000000; /* Fondo negro a juego con el footer */
-    color: #ffffff;
-    border: none;
-    padding: 14px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    align-self: center; /* Centra el botón exactamente en medio */
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    width: auto;
-    min-width: 150px;
-}
-
-.btn-enviar:hover {
-    background-color: #323232; /* Se vuelve gris oscuro al pasar el ratón */
-}
-
-.btn-enviar:active {
-    transform: scale(0.98); /* Pequeño efecto de hundido al hacer clic */
-}
-
-/* --- ADAPTACIÓN PARA MÓVILES --- */
-@media screen and (max-width: 768px) {
-    .input-grupo {
-        flex-direction: column; /* En móviles, el correo baja debajo del nombre */
-        gap: 15px;
-    }
-    
-    .btn-enviar {
-        width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
-    }
-}
-
-/* --- ESTILOS DEL FOOTER CENTRADO Y NEGRO --- */
-.site-footer {
-    background: #000000; /* Fondo negro puro */
-    color: #ffffff;      /* Texto blanco para máximo contraste */
-    text-align: center;  /* Centra el texto y elementos en línea */
-    padding: 30px 20px;  /* Espaciado interno generoso */
-    margin-top: 50px;    /* Separación elegante con los proyectos de arriba */
-    width: 100%;
-    box-sizing: border-box; /* Evita desbordamientos laterales */
-}
-
-.site-footer p {
-    margin: 0 0 15px 0;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center; /* Centra los enlaces horizontalmente en PCs */
-    align-items: center;
-    gap: 25px;               /* Separación horizontal entre los links */
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-/* Efecto visual al pasar el ratón por encima del enlace */
-.footer-links a:hover {
-    color: #00bcd4; /* Un azul cyan tecnológico (puedes cambiarlo por tu color favorito) */
-}
-
-/* --- ADAPTACIÓN RESPONSIVE (MÓVILES) --- */
-@media screen and (max-width: 768px) {
-    .footer-links {
-        flex-direction: column; /* En móviles los enlaces se apilan uno abajo del otro */
-        gap: 12px;              /* Espaciado vertical más compacto */
-    }
+  .project {
+    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+    text-align: left;
+    padding: 40px;
+  }
 }
